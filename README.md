@@ -1,7 +1,9 @@
 prowide-integrator-sandbox
 ============================
 
-Mock application to test Prowide Integrator features, particularly convenient for the GUI Tools module.
+Mock application for "Prowide Integrator" features.
+
+Particularly convenient for testign and evaluatign the GUI Tools module.
 
 IMPORTANT: This code is intended for Integrator customers or developers using an Integrator trial. Code in this repo will not compile without a running version of the Integrator library jars. In order to run the examples you should unpack your acquired jars in the lib dir and run ant here.
 
