@@ -8,9 +8,13 @@ IMPORTANT: This code is intended for Integrator customers or developers using an
 If you are interested on this software package you may request a trial download here: 
 http://www.prowidesoftware.com/contact.jsp
 
+** Requirements **
+Basic Java knowledge, including an installed version of the JVM and Maven.
 
-1. Edit pom.xml and replace the local dependencies with jar names and location for Prowide Integrator libraries
-2. mvn clean
-3. mvn install
-4. sh target/bin/webapp (Mac and Linux) C:/> target/bin/webapp.bat (Windows)
-5. Access the webapp at http://localhost:8080/
+** Instructions **
+1. Copy pw-integrator-*.jar and pw-xsd-gui-*.jar files from your Prowide integrator distribution/trial into prowide-integrator-sandbox/src/main/webapp/WEB-INF/lib within your checkout
+2. Edit pom.xml and replace the filenames indicated in the pw-integrator and pw-xsd-gui install section to match the filenames you have just copied in 1.
+3. mvn clean
+4. mvn install
+5. sh target/bin/webapp (Mac and Linux) C:/> target/bin/webapp.bat (Windows)
+6. Access the webapp at http://localhost:8080/ and follow screen instructions to use the demo app
