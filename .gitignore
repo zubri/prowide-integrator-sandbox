@@ -1,2 +1,6 @@
 /build/
 /target/
+/tomcat.8080/
+.settings
+src/main/webapp/WEB-INF/lib/pw*jar
+update-integrator.sh
