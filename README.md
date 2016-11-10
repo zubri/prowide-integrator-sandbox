@@ -9,9 +9,11 @@ If you are interested on this software package you may request a trial download 
 http://www.prowidesoftware.com/contact.jsp
 
 ** Requirements **
+
 Basic Java knowledge, including an installed version of the JVM and Maven.
 
 ** Instructions **
+
 1. Copy pw-integrator-*.jar and pw-xsd-gui-*.jar files from your Prowide integrator distribution/trial into prowide-integrator-sandbox/src/main/webapp/WEB-INF/lib within your checkout
 2. Edit pom.xml and replace the filenames indicated in the pw-integrator and pw-xsd-gui install section to match the filenames you have just copied in 1.
 3. mvn clean
