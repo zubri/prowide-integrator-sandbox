@@ -7,3 +7,10 @@ IMPORTANT: This code is intended for Integrator customers or developers using an
 
 If you are interested on this software package you may request a trial download here: 
 http://www.prowidesoftware.com/contact.jsp
+
+
+1. Edit pom.xml and replace the local dependencies with jar names and location for Prowide Integrator libraries
+2. mvn clean
+3. mvn install
+4. sh target/bin/webapp (Mac and Linux) C:/> target/bin/webapp.bat (Windows)
+5. Access the webapp at http://localhost:8080/
