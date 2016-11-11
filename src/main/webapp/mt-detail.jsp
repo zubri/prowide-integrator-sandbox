@@ -11,7 +11,7 @@
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
+	MtSwiftMessage msg = (MtSwiftMessage) request.getSession().getAttribute(type.name());
 %>
         <h1><%=type%></h1>
         <a href="mt?type=<%=type%>">back</a>

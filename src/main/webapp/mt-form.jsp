@@ -11,9 +11,10 @@
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
+	MtSwiftMessage msg = (MtSwiftMessage) request.getSession().getAttribute(type.name());
+	final String title = msg != null? "Edit "+type :"New "+type;
 %>
-        <h1><%=type%></h1>
+        <h1><%=title%></h1>
         <a href="mt">back</a>
         <form method="POST">
         <% 

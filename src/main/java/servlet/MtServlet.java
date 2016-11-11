@@ -49,7 +49,7 @@ public class MtServlet extends AbstractServlet {
     	//debug
     	System.out.println(req.getParameter("block1Xml"));
     	System.out.println(req.getParameter("block2Xml"));
-    	System.out.println(req.getParameter("documentXML"));
+    	System.out.println(req.getParameter("documentXml"));
     	
     	/*
     	 * Map form data into an MT.
@@ -69,7 +69,7 @@ public class MtServlet extends AbstractServlet {
     	 * Store the created message in request
     	 * We use the type as attribute name for demo convenience
     	 */
-    	req.setAttribute(type.name(), msg);
+    	req.getSession().setAttribute(type.name(), msg);
     	
     	/*
     	 * Display the message detail page
