@@ -20,5 +20,6 @@ http://www.prowidesoftware.com/contact.jsp
 >2. Edit pom.xml and replace the filenames indicated in the pw-integrator and pw-xsd-gui install section to match the filenames you have just copied in 1.
 >3. mvn clean
 >4. mvn install
->5. sh target/bin/webapp (Mac and Linux) C:/> target/bin/webapp.bat (Windows)
->6. Access the webapp at http://localhost:8080/ and follow screen instructions to use the demo app
+>5. mvn package
+>6. sh target/bin/webapp (Mac and Linux) C:/> target/bin/webapp.bat (Windows)
+>7. Access the webapp at http://localhost:8080/ and follow screen instructions to use the demo app
