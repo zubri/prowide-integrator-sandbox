@@ -14,7 +14,8 @@
 	MtSwiftMessage msg = (MtSwiftMessage) request.getSession().getAttribute(type.name());
 %>
         <h1><%=type%></h1>
-        <a href="mt?type=<%=type%>">back</a>
+        <a href="mt?type=<%=type%>">edit</a>
+        <a href="mt">close</a>
         <% 
         	MtFormBuilder builder = new MtFormBuilder();
         	builder.writeMTDetail(out, msg);

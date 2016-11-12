@@ -6,6 +6,9 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
+	<link rel="stylesheet" href="/js/jquery-ui-1.12.1/jquery-ui.min.css">
+	<script src="<%=request.getContextPath() %>/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="<%=request.getContextPath() %>/js/mt-form.js"></script>
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/xsd-gui.css"/>
 	</head>
     <body>
@@ -32,15 +35,5 @@
         <button id="validate">validate</button>
         <button formnovalidate="formnovalidate" id="save">save</button>
         </form>
-        <script>
-	    	$("#validate").click(function (ev){
-	    		buildMessage();
-	    		$("form").valid();
-	    	});
-        	$("#save").click(function (ev){
-        		buildMessage();
-       			$("form").submit();
-        	});
-        </script>
     </body>
 </html>
