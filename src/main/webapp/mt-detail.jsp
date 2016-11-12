@@ -6,7 +6,7 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/xsd-gui.css"/>
+	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
 	</head>
     <body>
 <%
