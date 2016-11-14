@@ -7,8 +7,10 @@
         <h1>New MT</h1>
         <a href="/" class="boton-link">back</a>
         <p>Select an MT from the list below to generate its web entry form</p>
-        <% for (SRU2016MtType type : SRU2016MtType.values()) { %>
-			<a href="/mt?type=<%=type.name()%>"><%=type.name()%></a><br />		
-        <% } %>
+        <ul class="messages-types">
+	        <% for (SRU2016MtType type : SRU2016MtType.values()) { %>
+				<li><a href="/mt?type=<%=type.name()%>"><%=type.name()%></a></li>
+	        <% } %>
+        </ul>
     </body>
 </html>

@@ -100,3 +100,35 @@ textarea:focus, input:focus, div:focus, a:focus {
     cursor: pointer;
     text-transform: capitalize;
 }
+
+/* Form MT & MX elements
+---------------------------------------------------------------*/
+
+.message-form {
+    margin-top: 40px;
+}
+
+.form-action {
+    padding-left: 50px;
+}
+
+.form-action button {
+    font-weight: 100;
+    font-size: 13px;
+    color: #40474f;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    background: #C0C0C0;
+    border: none;
+}
+
+.form-action .btn-default {
+    background: #CC0000;
+    color: #fff;
+}
+
+.messages-types a:hover {
+    text-decoration: underline;
+}

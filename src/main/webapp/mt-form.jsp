@@ -16,7 +16,7 @@
 %>
         <h1><%=type%></h1>
         <a href="mt" class="boton-link">back</a>
-        <form method="POST">
+        <form method="POST" class="message-form">
         <% 
         	/*
         	 * create the builder and optionally customize the renderer
@@ -29,8 +29,10 @@
         	 */
         	builder.writeMTForm(type, out, msg);
         %>
-        <button id="validate">validate</button>
-        <button formnovalidate="formnovalidate" id="save">save</button>
+        <div class="form-action">
+            <button id="validate" class="btn-default">validate</button>
+            <button formnovalidate="formnovalidate" id="save">save</button>
+        </div>
         </form>
         <script>
 	    	$("#validate").click(function (ev){
