@@ -6,7 +6,8 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/xsd-gui.css"/>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/xsd-gui.css"/>
 	</head>
     <body>
 <%
@@ -14,7 +15,7 @@
 	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
 %>
         <h1><%=type%></h1>
-        <a href="mt">back</a>
+        <a href="mt" class="boton-link">back</a>
         <form method="POST">
         <% 
         	/*
