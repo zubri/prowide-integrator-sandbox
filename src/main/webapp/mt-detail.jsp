@@ -15,11 +15,13 @@
 	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
 %>
         <h1><%=type%></h1>
-        <a href="mt?type=<%=type%>">back</a>
-        <% 
-        	MtFormBuilder builder = new MtFormBuilder();
-        	builder.writeMTDetail(out, msg);
-        %>
+        <a href="mt?type=<%=type%>" class="boton-link">back</a>
+        <div class="message-detail">
+            <% 
+            	MtFormBuilder builder = new MtFormBuilder();
+            	builder.writeMTDetail(out, msg);
+            %>
+        </div>
         <h2>SWIFT</h2>
         <pre><%=msg.message()%></pre>
     </body>

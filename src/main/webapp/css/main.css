@@ -132,3 +132,10 @@ textarea:focus, input:focus, div:focus, a:focus {
 .messages-types a:hover {
     text-decoration: underline;
 }
+
+/* Message detail
+---------------------------------------------------------------*/
+
+.message-detail {
+    margin-top: 20px;
+}
