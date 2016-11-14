@@ -13,16 +13,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.prowidesoftware.swift.gui.MtFormBuilder;
-import com.prowidesoftware.swift.model.MtSwiftMessage;
-import com.prowidesoftware.swift.model.mt.MtType;
-import com.prowidesoftware.swift.model.mt.SRU2016MtType;
+import com.prowidesoftware.swift.gui.MxFormBuilder;
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxType;
 
 @WebServlet(
-        name = "MtServlet",
-        urlPatterns = {"/mt"}
+        name = "MxServlet",
+        urlPatterns = {"/mx"}
     )
-public class MtServlet extends AbstractServlet {
+public class MxServlet extends AbstractServlet {
 	private static final long serialVersionUID = 3151991653694521562L;
 
 	public static String TYPE = "typeAttributeName";
@@ -36,33 +35,34 @@ public class MtServlet extends AbstractServlet {
     		 * If type parameter is not present, 
     		 * display the message type selection page
     		 */
-    		forward(req, resp, "mt-list.jsp");
+    		forward(req, resp, "mx-list.jsp");
     		
     	} else {
     		/*
     		 * If type parameter is present, store the MtType in request
     		 * and display the form for that particular mesasge type
     		 */
-	        final MtType type = SRU2016MtType.valueOf(typeParam);
+	        final MxType type = MxType.valueOf(typeParam);
 	        req.setAttribute(TYPE, type);
-	        forward(req, resp, "mt-form.jsp");
+	        forward(req, resp, "mx-form.jsp");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	
     	/*
-    	 * Map form data into an MT.
+    	 * Map form data into an MX.
     	 * 
     	 * When implementing a modification of pre existing message you can
     	 * pass also the existing message as parameter to the map method.
     	 */
-    	MtSwiftMessage msg = MtFormBuilder.map(req);
+    	MxSwiftMessage msg = MxFormBuilder.map(req);
 
     	/*
     	 * Store the message type in request
     	 */
-        final MtType type = SRU2016MtType.valueOf(req.getParameter("type"));
+        final MxType type = MxType.valueOf(req.getParameter("type"));
     	req.setAttribute(TYPE, type);
     	
     	/*
@@ -74,6 +74,6 @@ public class MtServlet extends AbstractServlet {
     	/*
     	 * Display the message detail page
     	 */
-		forward(req, resp, "mt-detail.jsp");
+		forward(req, resp, "mx-detail.jsp");
     }
 }
