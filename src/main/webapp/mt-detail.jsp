@@ -6,20 +6,22 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/xsd-gui.css"/>
 	</head>
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getSession().getAttribute(type.name());
+	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
 %>
         <h1><%=type%></h1>
-        <a href="mt?type=<%=type%>">edit</a>
-        <a href="mt">close</a>
-        <% 
-        	MtFormBuilder builder = new MtFormBuilder();
-        	builder.writeMTDetail(out, msg);
-        %>
+        <a href="mt?type=<%=type%>" class="boton-link">back</a>
+        <div class="message-detail">
+            <% 
+            	MtFormBuilder builder = new MtFormBuilder();
+            	builder.writeMTDetail(out, msg);
+            %>
+        </div>
         <h2>SWIFT</h2>
         <pre><%=msg.message()%></pre>
     </body>

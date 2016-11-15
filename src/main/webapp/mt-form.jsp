@@ -6,21 +6,17 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-	<link rel="stylesheet" href="/js/jquery-ui-1.12.1/jquery-ui.min.css">
-	<script src="/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-	<script src="/js/forms.js"></script>
-	<script src="/js/mt-form.js"></script>
-	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/xsd-gui.css"/>
 	</head>
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getSession().getAttribute(type.name());
-	final String title = msg != null? "Edit "+type :"New "+type;
+	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
 %>
-        <h1><%=title%></h1>
-        <a href="mt">back</a>
-        <form method="POST">
+        <h1><%=type%></h1>
+        <a href="mt" class="boton-link">back</a>
+        <form method="POST" class="message-form">
         <% 
         	/*
         	 * create the builder and optionally customize the renderer
@@ -33,8 +29,20 @@
         	 */
         	builder.writeMTForm(type, out, msg);
         %>
-        <button id="validate">validate</button>
-        <button formnovalidate="formnovalidate" id="save">save</button>
+        <div class="form-action">
+            <button id="validate" class="btn-default">validate</button>
+            <button formnovalidate="formnovalidate" id="save">save</button>
+        </div>
         </form>
+        <script>
+	    	$("#validate").click(function (ev){
+	    		buildMessage();
+	    		$("form").valid();
+	    	});
+        	$("#save").click(function (ev){
+        		buildMessage();
+       			$("form").submit();
+        	});
+        </script>
     </body>
 </html>

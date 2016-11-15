@@ -24,10 +24,6 @@ label.error {
 	font-size: 13px;
 }
 
-.treeItemSelectClass {
-    padding: 5px 21px 5px 10px;
-}
-
 .treeItemRequiredLabel:after {
     color: #F44336;
     margin-left: 3px;
@@ -99,6 +95,7 @@ input.treeItemDivClass {
     border-radius: 5px;
     margin: 10px 5px 10px 0;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .treeItemChoiceShowedChild {
@@ -133,10 +130,6 @@ font.treeItemInputClass {
 	text-transform: capitalize;
 	font-size: 13px;
 	vertical-align: middle;
-}
-
-.treeItemChoiceSelect {
-	padding: 5px 21px 5px 10px;
 }
 
 .treeNodeExpanded {
