@@ -9,6 +9,7 @@ package servlet;
 import javax.servlet.http.HttpServletRequest;
 
 import com.prowidesoftware.swift.model.AbstractSwiftMessage;
+import com.prowidesoftware.swift.model.MtId;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mt.MtType;
@@ -32,6 +33,7 @@ public class SessionHelper {
 		if (msg != null) {
 			final String identifier = msg.getIdentifier();
 			if (identifier != null) {
+				log.info("saving message in session with key: "+msg.getIdentifier());
 				req.getSession().setAttribute(identifier, msg);
 			} else {
 				log.severe("message identifier is null");
@@ -50,7 +52,9 @@ public class SessionHelper {
 	 */
 	public static MtSwiftMessage load(final HttpServletRequest req, final MtType type) {
 		if (type != null) {
-			return (MtSwiftMessage) req.getSession().getAttribute(type.name());
+			MtId id = new MtId(type.number(), type.variant());
+			log.info("retrieving message from session with key: "+id.id());
+			return (MtSwiftMessage) req.getSession().getAttribute(id.id());
 		} else {
 			log.warning("type parameter is null");
 		}
@@ -66,6 +70,7 @@ public class SessionHelper {
 	 */
 	public static MxSwiftMessage load(final HttpServletRequest req, final MxType type) {
 		if (type != null) {
+			log.info("retrieving message from session with key: "+type.name());
 			return (MxSwiftMessage) req.getSession().getAttribute(type.name());
 		} else {
 			log.warning("type parameter is null");

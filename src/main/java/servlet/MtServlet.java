@@ -55,6 +55,7 @@ public class MtServlet extends AbstractServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	log.info(req.getParameter("block2Xml"));
     	try {
 	    	/*
 	    	 * Map form data into an MT.
