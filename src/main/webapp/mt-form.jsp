@@ -1,3 +1,4 @@
+<%@page import="servlet.SessionHelper"%>
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
 <%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
 <%@page import="servlet.MtServlet"%>
@@ -16,7 +17,7 @@
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
+	MtSwiftMessage msg = SessionHelper.load(request, type);
 	final String title = msg != null? "Edit "+type :"New "+type;
 %>
         <h1><%=title%></h1>

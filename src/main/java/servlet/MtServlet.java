@@ -7,6 +7,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.guitools.AbstractFormBuilder;
 import com.prowidesoftware.swift.guitools.MtFormBuilder;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.mt.MtType;
@@ -25,6 +27,7 @@ import com.prowidesoftware.swift.model.mt.SRU2016MtType;
     )
 public class MtServlet extends AbstractServlet {
 	private static final long serialVersionUID = 3151991653694521562L;
+	private static transient final java.util.logging.Logger log = java.util.logging.Logger.getLogger(MtServlet.class.getName());
 
 	public static String TYPE = "typeAttributeName";
 	
@@ -60,18 +63,20 @@ public class MtServlet extends AbstractServlet {
 	    	 * pass also the existing message as parameter to the map method.
 	    	 */
 	    	MtSwiftMessage msg = MtFormBuilder.map(req);
+	    	log.info("mapped message: "+msg);
 	
 	    	/*
 	    	 * Store the message type in request
 	    	 */
-	        final MtType type = SRU2016MtType.valueOf(req.getParameter("type"));
+	        final MtType type = SRU2016MtType.valueOf(req.getParameter(AbstractFormBuilder.TYPE_PARAM));
 	    	req.setAttribute(TYPE, type);
+	    	log.fine("type: "+type);
 	    	
 	    	/*
-	    	 * Store the created message in request
-	    	 * We use the type as attribute name for demo convenience
+	    	 * Store the created message in user session for demo convenience
+	    	 * This should be replace with database persistence
 	    	 */
-	    	req.getSession().setAttribute(type.name(), msg);
+	    	SessionHelper.save(req, msg);
 
 	    	/*
 	    	 * Display the message detail page
@@ -79,6 +84,7 @@ public class MtServlet extends AbstractServlet {
 			forward(req, resp, "mt-detail.jsp");
 
     	} catch (ProwideException e) {
+    		log.log(Level.WARNING, e.getMessage(), e);
     		req.setAttribute("error", e.getMessage());
     		forward(req, resp, "error.jsp");
     	}

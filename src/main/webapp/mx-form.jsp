@@ -1,3 +1,4 @@
+<%@page import="servlet.SessionHelper"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="com.prowidesoftware.swift.model.MxSwiftMessage"%>
 <%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
@@ -17,7 +18,7 @@
     <body>
 <%
 	MxType type = (MxType) request.getAttribute(MxServlet.TYPE);
-	MxSwiftMessage msg = (MxSwiftMessage) request.getSession().getAttribute(type.name());
+	MxSwiftMessage msg = SessionHelper.load(request, type);
 	final String title = msg != null? "Edit "+type :"New "+type;
 %>
         <h1><%=StringUtils.replace(title, "_", ".")%></h1>
@@ -26,7 +27,8 @@
                 <button href="mx" class="boton-link">cancel</button>
             </div>
             <div class="right-side">
-                <button id="save" class="btn btn-default">save</button>
+                <button id="validate" class="btn btn-default">validate</button>
+                <button formnovalidate="formnovalidate" class="btn" id="save">save</button>
             </div>
         </div>
         

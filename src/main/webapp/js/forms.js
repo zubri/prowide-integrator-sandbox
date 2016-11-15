@@ -29,14 +29,7 @@ $(document).ready(function() {
 		/*
 		 * call submit
 		 */
-		if ($("form").valid()) {
-			$("form").submit();
-		} else {
-			/*
-			 * block submit
-			 */
-			ev.preventDefault();
-		}
+		$("form").submit();
 	});
 	
 });

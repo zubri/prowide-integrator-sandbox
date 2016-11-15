@@ -1,3 +1,4 @@
+<%@page import="servlet.SessionHelper"%>
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
 <%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
 <%@page import="servlet.MtServlet"%>
@@ -12,17 +13,21 @@
     <body>
 <%
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
-	MtSwiftMessage msg = (MtSwiftMessage) request.getAttribute(type.name());
+	MtSwiftMessage msg = SessionHelper.load(request, type);
 %>
         <h1><%=type%></h1>
         <a href="mt?type=<%=type%>" class="boton-link">back</a>
         <div class="message-detail">
             <% 
-            	MtFormBuilder builder = new MtFormBuilder();
-            	builder.writeMTDetail(out, msg);
-            %>
+	            if (msg != null) {
+	            	MtFormBuilder builder = new MtFormBuilder();
+	        		builder.writeMTDetail(out, msg);
+	        		out.write("<h2>SWIFT</h2>");
+	                out.write("<pre>"+ msg.message() +"</pre>");
+	        	} else {
+	        		out.write("Internal error rendering message");
+	        	}            
+	        %>
         </div>
-        <h2>SWIFT</h2>
-        <pre><%=msg.message()%></pre>
     </body>
 </html>
