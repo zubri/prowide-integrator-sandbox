@@ -14,6 +14,7 @@ $(document).ready(function() {
 	$( "div[fieldname='Fr'] label:first" ).addClass("firstNode");
 	$( "div[fieldname='AppHdr'] label:first").addClass("fake_accordion_main_title");
 	$( "div[fieldname='Document'] label:first").addClass("fake_accordion_main_title");
+	$( "div[level='3']" ).addClass("treeLabelThree");
 
 	/*
 	 * autocomplete CURRENCY
