@@ -16,7 +16,7 @@ html {
 
 body {
     height: 100%;
-    padding: 20px;
+    padding: 20 50 20 70;
 }
 
 ::-moz-selection {
