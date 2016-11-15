@@ -139,6 +139,11 @@ textarea:focus, input:focus, div:focus, a:focus {
     float: right;
 }
 
+.left-side {
+    display: inline-block;
+    float: left;
+}
+
 /* Message detail
 ---------------------------------------------------------------*/
 
