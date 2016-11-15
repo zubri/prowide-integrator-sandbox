@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="servlet.SessionHelper"%>
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
 <%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
@@ -21,7 +22,7 @@
 	MtSwiftMessage msg = SessionHelper.load(request, type);
 	final String title = msg != null? "Edit "+type :"New "+type;
 %>
-        <h1><%=title%></h1>
+        <h1><%=StringUtils.replace(title, "_", " ")%></h1>
         <div class="form-action float-panel">
             <div class="left-side">
         	   <a href="mt" class="boton-link">cancel</a>
