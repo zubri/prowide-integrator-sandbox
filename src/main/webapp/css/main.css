@@ -120,7 +120,7 @@ textarea:focus, input:focus, div:focus, a:focus {
 }
 
 .fixed {
-    width: 96% !important;
+    width: 90% !important;
 }
 
 .form-action .btn {
