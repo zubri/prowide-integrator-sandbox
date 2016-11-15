@@ -92,7 +92,6 @@ textarea:focus, input:focus, div:focus, a:focus {
 }
 
 .boton-link {
-    font-weight: 100;
     font-size: 13px;
     color: #40474f;
     border: 1px solid #c3cacd;
@@ -100,6 +99,7 @@ textarea:focus, input:focus, div:focus, a:focus {
     padding: 4px 15px;
     cursor: pointer;
     text-transform: capitalize;
+    background: #fff;
 }
 
 /* Form MT & MX elements
@@ -111,10 +111,11 @@ textarea:focus, input:focus, div:focus, a:focus {
 
 .form-action {
     display: block;
+    position: relative;
+    height: 10px;
 }
 
-.form-action button {
-    font-weight: 100;
+.form-action .btn {
     font-size: 13px;
     color: #40474f;
     border-radius: 4px;

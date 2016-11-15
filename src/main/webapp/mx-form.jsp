@@ -23,10 +23,10 @@
         <h1><%=StringUtils.replace(title, "_", ".")%></h1>
         <div class="form-action">
             <div class="left-side">
-                <a href="mx" class="boton-link">cancel</a>
+                <button href="mx" class="boton-link">cancel</button>
             </div>
             <div class="right-side">
-                <button id="save">save</button>
+                <button id="save" class="btn btn-default">save</button>
             </div>
         </div>
         

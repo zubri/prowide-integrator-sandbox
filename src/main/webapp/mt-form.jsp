@@ -25,8 +25,8 @@
         	   <a href="mt" class="boton-link">cancel</a>
             </div>
             <div class="right-side">
-                <button id="validate" class="btn-default">validate</button>
-                <button formnovalidate="formnovalidate" id="save">save</button>
+                <button id="validate" class="btn btn-default">validate</button>
+                <button formnovalidate="formnovalidate" class="btn" id="save">save</button>
             </div>
         </div>
         
