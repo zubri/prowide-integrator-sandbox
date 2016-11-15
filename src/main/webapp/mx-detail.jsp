@@ -7,7 +7,7 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/xsd-gui.css"/>
 	</head>
     <body>
 <%

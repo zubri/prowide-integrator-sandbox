@@ -7,8 +7,9 @@
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
+	<script src="/js/mt-form.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/xsd-gui.css"/>
 	</head>
     <body>
 <%
@@ -17,6 +18,7 @@
 %>
         <h1><%=type%></h1>
         <a href="mt?type=<%=type%>" class="boton-link">back</a>
+        
         <div class="message-detail">
             <% 
 	            if (msg != null) {

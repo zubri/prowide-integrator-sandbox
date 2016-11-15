@@ -13,8 +13,7 @@ $(document).ready(function() {
 	 * Add custom class for add style on form
 	 */
 	$("div[level='1']").each(function() {
-		$(this).find("label:first").addClass('fake_accordion_main_title');
+		$(this).find("label:first").addClass('root_element');
 	});
-	$( "div[level='3']" ).addClass("treeLabelThree");
 
 });

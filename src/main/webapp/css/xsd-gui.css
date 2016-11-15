@@ -194,7 +194,7 @@ font.treeItemInputClass {
 	font-weight: normal;
 }
 
-.fake_accordion_main_title {
+.root_element {
 	width: 95%;
 	font-size: 16px;
 	font-weight: normal;
@@ -205,18 +205,18 @@ font.treeItemInputClass {
 	margin-bottom: 20px;
 }
 
-.fake_accordion_main_title .treeNodeExpanded, .fake_accordion_main_title .treeNodeCollapsed {
+.root_element .treeNodeExpanded, .root_element .treeNodeCollapsed {
 	float: right;
 }
 
-.fake_accordion_main_title .treeNodeCollapsed {
+.root_element .treeNodeCollapsed {
 	background: url('img/down_arrow.png');
 	width: 16px;
 	height: 8px;
 	margin: 8px 0 0 0;
 }
 
- .fake_accordion_main_title .treeNodeExpanded {
+.root_element .treeNodeExpanded {
 	background: none;
  }
 
@@ -245,7 +245,7 @@ div.DocumentContainer > div > label:nth-child(2) {
     color: #440101;
 }
 
-.treeLabelThree:not(:last-child) {
+div[level='3']:not(:last-child) {
 	border-bottom: 1px #ccc dashed;
 }
 
