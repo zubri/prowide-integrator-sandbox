@@ -24,7 +24,7 @@
         <h1><%=StringUtils.replace(title, "_", ".")%></h1>
         <div class="form-action float-panel">
             <div class="left-side">
-                <button href="mx" class="boton-link">cancel</button>
+                <a href="mx" class="boton-link">cancel</a>
             </div>
             <div class="right-side">
                 <button id="save" class="btn btn-default">save</button>
