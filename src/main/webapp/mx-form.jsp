@@ -11,6 +11,7 @@
 		<script src="/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 	    <script src="/js/forms.js"></script>
 	    <script src="/js/mx-form.js"></script>
+        <script src="/js/vendor/float-panel.js"></script>
 		<link rel="stylesheet" type="text/css" href="/css/main.css"/>
 	    <link rel="stylesheet" type="text/css" href="/css/xsd-gui.css"/>	
     </head>
@@ -21,7 +22,7 @@
 	final String title = msg != null? "Edit "+type :"New "+type;
 %>
         <h1><%=StringUtils.replace(title, "_", ".")%></h1>
-        <div class="form-action">
+        <div class="form-action float-panel">
             <div class="left-side">
                 <button href="mx" class="boton-link">cancel</button>
             </div>

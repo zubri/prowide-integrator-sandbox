@@ -96,7 +96,7 @@ textarea:focus, input:focus, div:focus, a:focus {
     color: #40474f;
     border: 1px solid #c3cacd;
     border-radius: 4px;
-    padding: 4px 15px;
+    padding: 6px 15px;
     cursor: pointer;
     text-transform: capitalize;
     background: #fff;
@@ -113,6 +113,14 @@ textarea:focus, input:focus, div:focus, a:focus {
     display: block;
     position: relative;
     height: 10px;
+    width: 100%;
+    margin: 0;
+    background: #fff;
+    padding: 10px 0;
+}
+
+.fixed {
+    width: 96% !important;
 }
 
 .form-action .btn {
