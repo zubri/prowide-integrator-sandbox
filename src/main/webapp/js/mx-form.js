@@ -8,6 +8,14 @@ $(document).ready(function() {
 	$("div[fieldname='AppHdr'] div[fieldname='MsgDefIdr']").hide();
 
 	/*
+	 * Add custom class for add style on form
+	 */
+	$( "div[fieldname='To'] label:first").addClass("firstNode");
+	$( "div[fieldname='Fr'] label:first" ).addClass("firstNode");
+	$( "div[fieldname='AppHdr'] label:first").addClass("fake_accordion_main_title");
+	$( "div[fieldname='Document'] label:first").addClass("fake_accordion_main_title");
+
+	/*
 	 * autocomplete CURRENCY
 	 */
 	$("input[xsdtype='ActiveCurrencyCode']").addClass("currencyField");
