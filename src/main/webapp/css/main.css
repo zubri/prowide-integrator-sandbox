@@ -110,7 +110,7 @@ textarea:focus, input:focus, div:focus, a:focus {
 }
 
 .form-action {
-    padding-left: 50px;
+    display: block;
 }
 
 .form-action button {
@@ -118,7 +118,7 @@ textarea:focus, input:focus, div:focus, a:focus {
     font-size: 13px;
     color: #40474f;
     border-radius: 4px;
-    padding: 5px 15px;
+    padding: 6px 15px;
     cursor: pointer;
     text-transform: capitalize;
     background: #C0C0C0;
@@ -132,6 +132,11 @@ textarea:focus, input:focus, div:focus, a:focus {
 
 .messages-types a:hover {
     text-decoration: underline;
+}
+
+.right-side {
+    display: inline-block;
+    float: right;
 }
 
 /* Message detail

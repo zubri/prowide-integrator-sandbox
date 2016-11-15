@@ -22,8 +22,10 @@
         <h1><%=title%></h1>
         <div class="form-action">
         	<a href="mt" class="boton-link">cancel</a>
-        	<button id="validate" class="btn-default">validate</button>
-            <button formnovalidate="formnovalidate" id="save">save</button>
+            <div class="right-side">
+                <button id="validate" class="btn-default">validate</button>
+                <button formnovalidate="formnovalidate" id="save">save</button>
+            </div>
         </div>
         
         <form method="POST" class="message-form">

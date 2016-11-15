@@ -26,7 +26,9 @@
         	
         	
         	" class="boton-link">cancel</a>
-            <button id="save">save</button>
+            <div class="right-side">
+                <button id="save">save</button>
+            </div>
         </div>
         
         <form method="POST" class="message-form">
