@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
 	/*
-	 * Define an autocomplete for currencies
+	 * autocomplete CURRENCY
 	 */
-	var currencies = [ "USD", "EUR" ];
-	$("input[xsdtype='Currency_Type']").autocomplete({
-		source: currencies
+	$("input[xsdtype='Currency_Type']").addClass("currencyField");
+	//add others here
+	$(".currencyField").each(function (index, value){
+		autocompleteCUR($(this));
 	});
-	
+
 });

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.gui.MtFormBuilder;
+import com.prowidesoftware.swift.guitools.MtFormBuilder;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.mt.MtType;
 import com.prowidesoftware.swift.model.mt.SRU2016MtType;
@@ -72,15 +72,15 @@ public class MtServlet extends AbstractServlet {
 	    	 * We use the type as attribute name for demo convenience
 	    	 */
 	    	req.getSession().setAttribute(type.name(), msg);
-	    	
+
+	    	/*
+	    	 * Display the message detail page
+	    	 */
+			forward(req, resp, "mt-detail.jsp");
+
     	} catch (ProwideException e) {
     		req.setAttribute("error", e.getMessage());
     		forward(req, resp, "error.jsp");
     	}
-    	
-    	/*
-    	 * Display the message detail page
-    	 */
-		forward(req, resp, "mt-detail.jsp");
     }
 }

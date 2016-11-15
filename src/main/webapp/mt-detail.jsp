@@ -1,13 +1,13 @@
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
 <%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
 <%@page import="servlet.MtServlet"%>
-<%@page import="com.prowidesoftware.swift.gui.MtFormBuilder"%>
+<%@page import="com.prowidesoftware.swift.guitools.MtFormBuilder"%>
 <%@page import="com.prowidesoftware.swift.model.mt.MtType"%>
 <html>
 	<head>
 	<%=ResourceServlet.includeHeaders(request)%>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/xsd-gui.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="/xsd-gui.css"/>
 	</head>
     <body>
 <%

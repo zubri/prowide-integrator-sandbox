@@ -1,8 +1,8 @@
 <%@page import="com.prowidesoftware.swift.model.mt.SRU2016MtType"%>
 <html>
-<head>
-	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/main.css"/>
-</head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+	</head>
     <body>
         <h1>New MT</h1>
         <a href="/" class="boton-link">back</a>

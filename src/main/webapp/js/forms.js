@@ -27,9 +27,27 @@ $(document).ready(function() {
 		 */
 		buildMessage();
 		/*
-		 * call submit (this could also be made conditional to validation)
+		 * call submit
 		 */
-		$("form").submit();
+		if ($("form").valid()) {
+			$("form").submit();
+		} else {
+			/*
+			 * block submit
+			 */
+			ev.preventDefault();
+		}
 	});
 	
 });
+	
+/**
+ * Implements autocomplete for currency codes, using fixed values
+ * This could be loaded from JSON service from backend
+ */
+function autocompleteCUR(input) {
+	var currencies = [ "USD", "EUR" ];
+	$(input).autocomplete({
+		source: currencies
+	});
+}
