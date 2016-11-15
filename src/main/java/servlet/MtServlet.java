@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.gui.MtFormBuilder;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.mt.MtType;
@@ -51,25 +52,31 @@ public class MtServlet extends AbstractServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	/*
-    	 * Map form data into an MT.
-    	 * 
-    	 * When implementing a modification of pre existing message you can
-    	 * pass also the existing message as parameter to the map method.
-    	 */
-    	MtSwiftMessage msg = MtFormBuilder.map(req);
-
-    	/*
-    	 * Store the message type in request
-    	 */
-        final MtType type = SRU2016MtType.valueOf(req.getParameter("type"));
-    	req.setAttribute(TYPE, type);
-    	
-    	/*
-    	 * Store the created message in request
-    	 * We use the type as attribute name for demo convenience
-    	 */
-    	req.getSession().setAttribute(type.name(), msg);
+    	try {
+	    	/*
+	    	 * Map form data into an MT.
+	    	 * 
+	    	 * When implementing a modification of pre existing message you can
+	    	 * pass also the existing message as parameter to the map method.
+	    	 */
+	    	MtSwiftMessage msg = MtFormBuilder.map(req);
+	
+	    	/*
+	    	 * Store the message type in request
+	    	 */
+	        final MtType type = SRU2016MtType.valueOf(req.getParameter("type"));
+	    	req.setAttribute(TYPE, type);
+	    	
+	    	/*
+	    	 * Store the created message in request
+	    	 * We use the type as attribute name for demo convenience
+	    	 */
+	    	req.getSession().setAttribute(type.name(), msg);
+	    	
+    	} catch (ProwideException e) {
+    		req.setAttribute("error", e.getMessage());
+    		forward(req, resp, "error.jsp");
+    	}
     	
     	/*
     	 * Display the message detail page
