@@ -9,4 +9,12 @@ $(document).ready(function() {
 		autocompleteCUR($(this));
 	});
 
+	/*
+	 * Add custom class for add style on form
+	 */
+	$("div[level='1']").each(function() {
+		$(this).find("label:first").addClass('fake_accordion_main_title');
+	});
+	$( "div[level='3']" ).addClass("treeLabelThree");
+
 });

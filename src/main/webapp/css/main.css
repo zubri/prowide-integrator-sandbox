@@ -120,7 +120,7 @@ textarea:focus, input:focus, div:focus, a:focus {
 }
 
 .fixed {
-    width: 96% !important;
+    width: 90% !important;
 }
 
 .form-action .btn {
@@ -132,7 +132,6 @@ textarea:focus, input:focus, div:focus, a:focus {
     text-transform: capitalize;
     background: #C0C0C0;
     border: 1px solid #C0C0C0;
-    border: none;
 }
 
 .form-action .btn-default {
