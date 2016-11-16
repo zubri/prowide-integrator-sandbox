@@ -41,8 +41,8 @@
         	MxFormBuilder builder = new MxFormBuilder();
         
         	/*
-        	 * Create the form passing the existign message (if any) as parameter
-        	 * so the form is pre filled with content (emulatting message modification)
+        	 * Create the form passing the existing message (if any) as parameter
+        	 * so the form is pre-filled with content (emulating message modification)
         	 */
         	builder.writeMXForm(type, out, msg);
         %>

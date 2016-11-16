@@ -41,8 +41,8 @@
         	MtFormBuilder builder = new MtFormBuilder();
         
         	/*
-        	 * Create the form passing the existign message (if any) as parameter
-        	 * so the form is pre filled with content (emulatting message modification)
+        	 * Create the form passing the existing message (if any) as parameter
+        	 * so the form is pre-filled with content (emulating message modification)
         	 */
         	builder.writeMTForm(type, out, msg);
         %>
