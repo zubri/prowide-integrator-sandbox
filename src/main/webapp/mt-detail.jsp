@@ -1,6 +1,7 @@
+<%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="servlet.SessionHelper"%>
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
-<%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
+<%@page import="com.prowidesoftware.swift.guitools.servlet.ResourceServlet"%>
 <%@page import="servlet.MtServlet"%>
 <%@page import="com.prowidesoftware.swift.guitools.MtFormBuilder"%>
 <%@page import="com.prowidesoftware.swift.model.mt.MtType"%>
@@ -16,8 +17,9 @@
 	MtType type = (MtType) request.getAttribute(MtServlet.TYPE);
 	MtSwiftMessage msg = SessionHelper.load(request, type);
 %>
-        <h1><%=type%></h1>
-        <a href="mt?type=<%=type%>" class="boton-link">back</a>
+        <h1><%=StringUtils.replace(type.name(), "_", " ")%></h1>
+        <a href="mt" class="boton-link">close</a>
+        <a href="mt?type=<%=type%>" class="boton-link">edit</a>
         
         <div class="message-detail">
             <% 

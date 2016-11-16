@@ -7,7 +7,7 @@ import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
-import com.prowidesoftware.xsd.html.gui.web.ResourceServlet;
+import com.prowidesoftware.swift.guitools.servlet.ResourceServlet;
 
 /**
  * Embedded Tomcat launcher
@@ -35,7 +35,7 @@ public class Main {
          * This is analogous to defining the following in the application web.xml
          * 	<servlet>
          * 		<servlet-name>ResourceServlet</servlet-name>
-         * 		<servlet-class>com.prowidesoftware.xsd.html.gui.web.ResourceServlet</servlet-class>
+         * 		<servlet-class>com.prowidesoftware.swift.guitools.servlet.ResourceServlet</servlet-class>
          * 	</servlet>
          * 	<servlet-mapping>
          * 		<servlet-name>ResourceServlet</servlet-name>

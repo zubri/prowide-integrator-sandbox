@@ -1,4 +1,6 @@
 /*******************************************************************************
+
+
  * Copyright (c) 2016 Prowide Inc.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of private license agreements
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.guitools.AbstractFormBuilder;
 import com.prowidesoftware.swift.guitools.MxFormBuilder;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxType;
@@ -53,6 +56,9 @@ public class MxServlet extends AbstractServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	log.info("type:"+req.getParameter(AbstractFormBuilder.TYPE_PARAM));
+    	log.info("type:"+req.getParameter(AbstractFormBuilder.DOCUMENT_PARAM));
+    	log.info("type:"+req.getParameter(MxFormBuilder.HEADER_PARAM));
     	try {
 	    	/*
 	    	 * Map form data into an MX.

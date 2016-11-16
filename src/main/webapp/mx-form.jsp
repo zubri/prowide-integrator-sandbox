@@ -1,7 +1,7 @@
 <%@page import="servlet.SessionHelper"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="com.prowidesoftware.swift.model.MxSwiftMessage"%>
-<%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
+<%@page import="com.prowidesoftware.swift.guitools.servlet.ResourceServlet"%>
 <%@page import="servlet.MxServlet"%>
 <%@page import="com.prowidesoftware.swift.guitools.MxFormBuilder"%>
 <%@page import="com.prowidesoftware.swift.model.mx.MxType"%>

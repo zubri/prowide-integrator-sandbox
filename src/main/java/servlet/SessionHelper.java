@@ -8,6 +8,8 @@ package servlet;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.prowidesoftware.swift.model.AbstractSwiftMessage;
 import com.prowidesoftware.swift.model.MtId;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
@@ -70,8 +72,9 @@ public class SessionHelper {
 	 */
 	public static MxSwiftMessage load(final HttpServletRequest req, final MxType type) {
 		if (type != null) {
-			log.info("retrieving message from session with key: "+type.name());
-			return (MxSwiftMessage) req.getSession().getAttribute(type.name());
+			final String key = StringUtils.replace(type.name(), "_", ".");
+			log.info("retrieving message from session with key: "+ key);
+			return (MxSwiftMessage) req.getSession().getAttribute(key);
 		} else {
 			log.warning("type parameter is null");
 		}

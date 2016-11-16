@@ -1,7 +1,7 @@
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="servlet.SessionHelper"%>
 <%@page import="com.prowidesoftware.swift.model.MtSwiftMessage"%>
-<%@page import="com.prowidesoftware.xsd.html.gui.web.ResourceServlet"%>
+<%@page import="com.prowidesoftware.swift.guitools.servlet.ResourceServlet"%>
 <%@page import="servlet.MtServlet"%>
 <%@page import="com.prowidesoftware.swift.guitools.MtFormBuilder"%>
 <%@page import="com.prowidesoftware.swift.model.mt.MtType"%>
