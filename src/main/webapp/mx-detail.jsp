@@ -11,7 +11,6 @@
 	<%=ResourceServlet.includeHeaders(request)%>
 	<script src="/js/mt-form.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="/css/xsd-gui.css"/>
 	</head>
     <body>
 <%

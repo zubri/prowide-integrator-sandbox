@@ -14,7 +14,6 @@
 	    <script src="/js/mx-form.js"></script>
         <script src="/js/vendor/float-panel.js"></script>
 		<link rel="stylesheet" type="text/css" href="/css/main.css"/>
-	    <link rel="stylesheet" type="text/css" href="/css/xsd-gui.css"/>	
     </head>
     <body>
 <%

@@ -56,7 +56,7 @@
     	<groupId>com.prowidesoftware</groupId>
     	<artifactId>prowide-xsd-gui</artifactId>
     	<!-- keep version in sync with local install below -->
-    	<version>1.0</version>
+    	<version>1.1</version>
 	</dependency>
   </dependencies>
   <build>
@@ -94,7 +94,7 @@
 		            <phase>clean</phase>
 		            <configuration>
 		            	<!-- Replace file below with jar from your Prowide Integrator libraries -->
-		                <file>${project.basedir}/src/main/webapp/WEB-INF/lib/pw-swift-integrator-SRU2016-7.8.5.jar</file>
+		                <file>${project.basedir}/src/main/webapp/WEB-INF/lib/pw-swift-integrator-develop.jar</file>
 		                <repositoryLayout>default</repositoryLayout>
 		                <groupId>com.prowidesoftware</groupId>
 		                <artifactId>prowide-swift-integrator</artifactId>
@@ -110,12 +110,12 @@
 		            <id>install-prowide-xsd-gui</id>
 		            <phase>clean</phase>
 		            <configuration>
-						<!-- Replace file below with jar from your Prowide Integrator libraries -->
-		                <file>${project.basedir}/src/main/webapp/WEB-INF/lib/pw-xsd-gui-1.0.0.jar</file>
+				<!-- Replace file below with jar from your Prowide Integrator libraries -->
+		                <file>${project.basedir}/src/main/webapp/WEB-INF/lib/pw-xsd-gui-1.1.0.jar</file>
 		                <repositoryLayout>default</repositoryLayout>
 		                <groupId>com.prowidesoftware</groupId>
 		                <artifactId>prowide-xsd-gui</artifactId>
-		                <version>1.0</version>
+		                <version>1.1</version>
 		                <packaging>jar</packaging>
 		                <generatePom>true</generatePom>
 		            </configuration>
