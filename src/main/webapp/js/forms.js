@@ -1,3 +1,6 @@
+/*
+ * Example JS to control the behaviour of the message creation page
+ */
 $(document).ready(function() {
 
 	/*

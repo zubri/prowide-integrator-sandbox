@@ -1,19 +1,46 @@
+/*
+ * Example JS to control the style and behaviour of the MT message creation form.
+ */
 $(document).ready(function() {
 
 	/*
-	 * autocomplete CURRENCY
+	 * CURRENCY fields customization example:
+	 * We call the autocomplete for currencies implemented in forms.js
 	 */
 	$("input[xsdtype='Currency_Type']").addClass("currencyField");
-	//add others here
 	$(".currencyField").each(function (index, value){
 		autocompleteCUR($(this));
 	});
 
 	/*
-	 * Add custom class for add style on form
+	 * BIC fields customization example:
+	 * We add a "BIC" placeholder to denote the field expects a BIC.
+	 * Here you may also add an autocomplete querying BICs from your
+	 * own database or from Prowide Integrator SDK BIC directory.
+	 */
+	$("input[xsdtype^='Identifier_BIC']").addClass("bicField");
+	$(".bicField").each(function (index, value){
+		$(this).attr("placeholder", "BIC")
+	});
+
+	/*
+	 * Style customization from JS example:
+	 * We add a custom style class using a JS jQuery selector on some elements
 	 */
 	$("div[level='1']").each(function() {
 		$(this).find("label:first").addClass('root_element');
 	});
+	
+	/*
+	 * Fields visibility manipulation example:
+	 * We hide several unused elements from the form
+	 */
+	$("div[fieldname='Block1'] div[fieldname='ApplicationIdentifier']").hide();
+	$("div[fieldname='Block1'] div[fieldname='ServiceIdentifier']").hide();
+	$("div[fieldname='Block1'] div[fieldname='SessionNumber']").hide();
+	$("div[fieldname='Block1'] div[fieldname='SequenceNumber']").hide();
+	$("div[fieldname='F16a_1']").hide();
+	$("div[fieldname='F16a_2']").hide();
+	$("div[fieldname='F15a']").hide();
 
 });

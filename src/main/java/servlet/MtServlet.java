@@ -55,32 +55,44 @@ public class MtServlet extends AbstractServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	log.info(req.getParameter("block2Xml"));
     	try {
 	    	/*
 	    	 * Map form data into an MT.
 	    	 * 
-	    	 * When implementing a modification of pre existing message you can
+	    	 * When implementing a modification of pre-existing message you can
 	    	 * pass also the existing message as parameter to the map method.
 	    	 */
 	    	MtSwiftMessage msg = MtFormBuilder.map(req);
 	    	log.info("mapped message: "+msg);
 	
 	    	/*
-	    	 * Store the message type in request
+	    	 * On a real application here you should be calling the validation engine
+	    	 * (from Prowide Integrator Validation module) in order to check the created
+	    	 * message is full standard compliance, sending the backend validation result
+	    	 * back to the form in case of errors. Notice the client side validation done
+	    	 * in the form is just a lightweight javascript check on mandatory fields and
+	    	 * content. That client side validation (included in the GUI Tools module) does
+	    	 * not check for example network/semantic rules.
+	    	 */
+	    	
+	    	/*
+	    	 * Store the message type in request, just for convenience.
 	    	 */
 	        final MtType type = SRU2016MtType.valueOf(req.getParameter(AbstractFormBuilder.TYPE_PARAM));
 	    	req.setAttribute(TYPE, type);
 	    	log.fine("type: "+type);
 	    	
 	    	/*
-	    	 * Store the created message in user session for demo convenience
-	    	 * This should be replace with database persistence
+	    	 * Store the created message in user session for demo convenience.
+	    	 * This should be replace with database persistence in a real application.
 	    	 */
 	    	SessionHelper.save(req, msg);
 
 	    	/*
-	    	 * Display the message detail page
+	    	 * Display the message detail page.
+	    	 * The JSP will use the message store in session, in a real application
+	    	 * you would for example have a specific servlet controller loading the persisted 
+	    	 * message from database and passing it to the JSP view. 
 	    	 */
 			forward(req, resp, "mt-detail.jsp");
 
