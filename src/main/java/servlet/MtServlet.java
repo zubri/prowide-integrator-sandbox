@@ -19,7 +19,7 @@ import com.prowidesoftware.swift.guitools.AbstractFormBuilder;
 import com.prowidesoftware.swift.guitools.MtFormBuilder;
 import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.mt.MtType;
-import com.prowidesoftware.swift.model.mt.SRU2016MtType;
+import com.prowidesoftware.swift.model.mt.SRU2017MtType;
 
 @WebServlet(
         name = "MtServlet",
@@ -47,7 +47,7 @@ public class MtServlet extends AbstractServlet {
     		 * If type parameter is present, store the MtType in request
     		 * and display the form for that particular mesasge type
     		 */
-	        final MtType type = SRU2016MtType.valueOf(typeParam);
+	        final MtType type = SRU2017MtType.valueOf(typeParam);
 	        req.setAttribute(TYPE, type);
 	        forward(req, resp, "mt-form.jsp");
         }
@@ -78,7 +78,7 @@ public class MtServlet extends AbstractServlet {
 	    	/*
 	    	 * Store the message type in request, just for convenience.
 	    	 */
-	        final MtType type = SRU2016MtType.valueOf(req.getParameter(AbstractFormBuilder.TYPE_PARAM));
+	        final MtType type = SRU2017MtType.valueOf(req.getParameter(AbstractFormBuilder.TYPE_PARAM));
 	    	req.setAttribute(TYPE, type);
 	    	log.fine("type: "+type);
 	    	
