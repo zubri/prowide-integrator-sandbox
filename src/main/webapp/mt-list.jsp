@@ -9,7 +9,7 @@
         <p>Select an MT from the list below to generate its web entry form</p>
         <ul class="messages-types">
 	        <% 
-	        	for (SRU2016MtType type : SRU2017MtType.values()) {
+	        	for (SRU2017MtType type : SRU2017MtType.values()) {
 	        		if (!type.category().equals("0")) {
 	        %>
 				<li><a href="/mt?type=<%=type.name()%>"><%=type.name()%></a></li>
