@@ -19,7 +19,7 @@ html {
 
 body {
     height: 100%;
-    padding: 20 50 20 70;
+    padding: 20px 50px 20px 70px;
 }
 
 ::-moz-selection {
@@ -126,18 +126,22 @@ textarea:focus, input:focus, div:focus, a:focus {
     width: 90% !important;
 }
 
-.form-action .btn {
+.btn {
     font-size: 13px;
-    color: #40474f;
     border-radius: 4px;
     padding: 6px 15px;
     cursor: pointer;
     text-transform: capitalize;
+    border: 1px solid #C0C0C0;
+}
+
+.btn-secondary {
+    color: #40474f;
     background: #C0C0C0;
     border: 1px solid #C0C0C0;
 }
 
-.form-action .btn-default {
+.btn-primary {
     background: #CC0000;
     color: #fff;
     border: 1px solid #CC0000;
