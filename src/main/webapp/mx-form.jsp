@@ -27,7 +27,7 @@
                 <a href="mx" class="boton-link">cancel</a>
             </div>
             <div class="right-side">
-                <button id="validate" class="btn btn-default">validate</button>
+                <button id="validate" class="btn btn-primary">validate</button>
                 <button formnovalidate="formnovalidate" class="btn" id="save">save</button>
             </div>
         </div>
