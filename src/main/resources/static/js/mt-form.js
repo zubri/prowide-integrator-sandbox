@@ -7,7 +7,6 @@ $(document).ready(function() {
 	 * CURRENCY fields customization example:
 	 * We call the autocomplete for currencies implemented in forms.js
 	 */
-	$("input[xsdtype='Currency_Type']").addClass("currencyField");
 	$(".currencyField").each(function (index, value){
 		autocompleteCUR($(this));
 	});
@@ -18,7 +17,6 @@ $(document).ready(function() {
 	 * Here you may also add an autocomplete querying BICs from your
 	 * own database or from Prowide Integrator SDK BIC directory.
 	 */
-	$("input[xsdtype^='Identifier_BIC']").addClass("bicField");
 	$(".bicField").each(function (index, value){
 		$(this).attr("placeholder", "BIC")
 	});

@@ -24,9 +24,6 @@ $(document).ready(function() {
 	 * CURRENCY fields customization example:
 	 * We call the autocomplete for currencies implemented in forms.js
 	 */
-	$("input[xsdtype='ActiveCurrencyCode']").addClass("currencyField");
-	$("input[xsdtype='ActiveOrHistoricCurrencyCode']").addClass("currencyField");
-	$("input[xsdtype='CurrencyCode']").addClass("currencyField");
 	$(".currencyField").each(function (index, value){
 		autocompleteCUR($(this));
 	});
