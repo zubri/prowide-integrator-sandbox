@@ -30,8 +30,8 @@ dependencies {
     //
     /////////////////////////////////////////////////////////////////////////
     
-    implementation files('lib/pw-swift-integrator-SRU2018-develop-licensed.jar')
-    implementation files('lib/pw-swift-guitools-1.0.0.jar')
+    implementation files('lib/pw-swift-integrator-SRU2018-7.10.9u4.jar')
+    implementation files('lib/pw-swift-guitools-SNAPSHOT-1.0.1.jar')
     
     /////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +41,10 @@ dependencies {
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation group: 'com.h2database', name: 'h2', version: '1.4.199'
+    
+    
+    implementation group: 'org.apache.activemq', name: 'activemq-all', version: '5.15.9'
+
 
     // GUI webjars
     compile group: 'org.webjars', name: 'bootstrap', version: '4.2.1'
