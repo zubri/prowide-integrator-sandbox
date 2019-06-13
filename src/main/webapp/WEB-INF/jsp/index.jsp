@@ -35,6 +35,11 @@
                         <td>
                             <a href="/detail/${m.id}" class="btn btn-outline-primary">Detail</a>
                             <a href="/repair/${m.id}" class="btn btn-outline-primary">Repair</a>
+
+                            <!-- for a real copy you should process this in the backend,
+                                 create a hard copy of the message, and forward the request
+                                 to the form, preloaded with the copied message -->
+                            <a href="/repair/${m.id}" class="btn btn-outline-primary">Copy</a>
                         </th>
                     </tr>
                     </c:forEach>

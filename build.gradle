@@ -31,7 +31,7 @@ dependencies {
     /////////////////////////////////////////////////////////////////////////
     
     implementation files('lib/pw-swift-integrator-SRU2018-7.10.9u4.jar')
-    implementation files('lib/pw-swift-guitools-SNAPSHOT-1.0.1.jar')
+    implementation files('lib/pw-swift-guitools-1.0.0.jar')
     
     /////////////////////////////////////////////////////////////////////////
 
@@ -42,9 +42,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation group: 'com.h2database', name: 'h2', version: '1.4.199'
     
-    
-    implementation group: 'org.apache.activemq', name: 'activemq-all', version: '5.15.9'
-
+    implementation group: 'org.apache.activemq', name: 'activemq-client', version: '5.15.4'
 
     // GUI webjars
     compile group: 'org.webjars', name: 'bootstrap', version: '4.2.1'
@@ -66,6 +64,11 @@ dependencies {
     // Prowide Integrator Validation dependencies
     compile 'org.mozilla:rhino:1.7.7.2'
 
+    // MyFormat dependencies
+    implementation ('org.apache.poi:poi:3.17') {
+        transitive = false
+    }
+    
     // Test & Development
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
